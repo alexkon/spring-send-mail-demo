@@ -35,7 +35,8 @@ public class RegistrationController {
             notificationService.sendNotification(registerUser);
         } catch (MailException e) {
             logger.error("Email sending error: " + e.getMessage());
-            e.printStackTrace();
+//            e.printStackTrace();
+            return "Something goes wrong. Check out your logs.";
         }
 
         return "Thank you for register. Check out your email for notification message.";
